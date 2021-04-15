@@ -1,5 +1,6 @@
 # Dashboard
-![Dashboard](https://user-images.githubusercontent.com/81439723/114913464-99568800-9df7-11eb-8b0f-b740043d363a.gif)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/81439723/114914218-711b5900-9df8-11eb-9b96-248507febdf4.gif)
+
 
 > Status: Concluded ✔️
 
