@@ -11,10 +11,10 @@ body {
   width: auto;
   height: auto;
   background: #f9f9f9;
-  display: flex;
 }
 
 .side-bar {
+  top: 0;
   position: fixed;
   max-width: 280px;
   background: #ffffff;
@@ -147,7 +147,7 @@ body {
 .header {
   background: #ffffff;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.170509);
-  width: 1570px;
+  width: 100%;
   height: 62px;
   margin-top: 30px;
   border-radius: 8px;
@@ -262,11 +262,12 @@ img:last-child {
 /* Style the content main*/
 .main {
   margin-left: 20em;
+  margin-right: 1rem;
 }
 
 /*Style the div */
 .subtitle {
-  width: 1572px;
+  width: 100%;
   height: 62px;
   margin-top: 30px;
   display: flex;
@@ -449,7 +450,7 @@ img:last-child {
 }
 
 .search input {
-  width: 1170px;
+  width: 100%;
   height: 62px;
   border-radius: 8px;
   border: none;
@@ -475,7 +476,7 @@ img:last-child {
 
 .card {
   position: relative;
-  max-width: 100%;
+  width: 100%;
   height: 252px;
   margin-bottom: 27px;
   border-radius: 8px;
@@ -1045,41 +1046,4 @@ button div {
 
 .flatpickr-rContainer {
   font-size: 12px;
-}
-
-@media only screen and (max-width: 1600px) {
-  .side-bar {
-    width: 200px;
-  }
-  #imgdown {
-    padding-left: 8px;
-  }
-  .text-logo {
-    padding-right: 1.5rem;
-  }
-
-  .dropbtn,
-  .dropdown-content,
-  .dropdown-content a {
-    width: 150px;
-    font-size: 12px;
-  }
-  .main {
-    margin-left: 14.5rem;
-  }
-  .header {
-    width: 1080px;
-  }
-  .header-dashboard {
-    width: 1080px;
-  }
-  .subtitle {
-    width: 1080px;
-  }
-  .search input {
-    width: 680px;
-  }
-  .card {
-    width: 680px;
-  }
 }
