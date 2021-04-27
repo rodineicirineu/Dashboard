@@ -41,7 +41,7 @@ body {
   margin: 43px 0px;
   color: #606060;
   font-size: 16px;
-  padding-right: 6.5rem;
+  padding-right: 5rem;
   float: right;
 }
 
@@ -151,18 +151,21 @@ body {
   height: 62px;
   margin-top: 30px;
   border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Style the icons */
 .icons {
-  float: left;
-  margin: 22px;
+  display: flex;
+  align-items: center;
+  margin-left: 22px;
 }
 
 /* Style the div photos */
 .photo {
+  align-items: center;
   display: flex;
-  float: right;
   color: #2c2c2c;
 }
 
@@ -215,7 +218,6 @@ body {
   cursor: pointer;
   background: #ffffff url(../img/search.svg) no-repeat center right;
   border: none;
-  margin-top: 22px;
   padding: 10px;
   width: 20px;
   height: 20px;
@@ -234,10 +236,8 @@ body {
 
 .photo img {
   cursor: pointer;
-  padding-bottom: 5px;
 }
 
-/* Padding the img bell  */
 img:first-child {
   padding-right: 22px;
 }
@@ -259,8 +259,9 @@ img:last-child {
   font-size: 11px;
 }
 
-/* Style the content main*/
-.main {
+main,
+header,
+footer {
   margin-left: 20em;
   margin-right: 1rem;
 }
@@ -536,7 +537,7 @@ img:last-child {
   color: #2c2c2c;
   border: none;
   outline: none;
-  transition: background 500ms linear;
+  transition: all 500ms linear;
 }
 
 .btn-card button:first-child:hover {
@@ -1057,7 +1058,7 @@ button div {
   font-size: 12px;
 }
 
-@media screen and (max-width: 1464px) { 
+@media screen and (max-width: 1464px) {
   .left {
     transition: all 1s linear;
     opacity: 0;
