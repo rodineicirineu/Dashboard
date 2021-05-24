@@ -103,7 +103,7 @@ function myFunction() {
 
 
   /* Pagination */
-  var items = $($('.group-card .card '));
+  var items = $($('.card '));
   var numItems = 20;
   var perPage = 4;
 
@@ -122,4 +122,14 @@ function myFunction() {
   })
 
   /* Calendar */
-  var example = flatpickr('#flatpickr');
+  var calendar = flatpickr('#flatpickr');
+
+  /* Menu */
+ function menu() {
+    const el = document.querySelector(".side-bar");
+    if (el.classList.contains("showMenu")) {
+      el.classList.remove("showMenu")
+    }
+    else
+      el.classList.add("showMenu")
+  }
