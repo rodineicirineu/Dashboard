@@ -11,17 +11,29 @@ body {
   width: auto;
   height: auto;
   background: #f9f9f9;
+  overflow-x: hidden;
+}
+
+main,
+header,
+footer {
+  margin-left: 20em;
+  margin-right: 1rem;
 }
 
 .side-bar {
   top: 0;
   position: fixed;
-  max-width: 280px;
+  width: 280px;
   background: #ffffff;
   height: 100%;
   display: inline-block;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.170509);
   z-index: 5;
+}
+
+.showMenu {
+  display: block;
 }
 
 /* Style the div and logo position */
@@ -41,7 +53,7 @@ body {
   margin: 43px 0px;
   color: #606060;
   font-size: 16px;
-  padding-right: 5rem;
+  padding-right: 6rem;
   float: right;
 }
 
@@ -162,6 +174,17 @@ body {
   margin-left: 22px;
 }
 
+.icons input {
+  width: 10px;
+  height: 10px;
+  display: none;
+}
+
+.icons img {
+  cursor: pointer;
+  padding-right: 22px;
+}
+
 /* Style the div photos */
 .photo {
   align-items: center;
@@ -169,9 +192,8 @@ body {
   color: #2c2c2c;
 }
 
-.icons img {
+.photo img {
   cursor: pointer;
-  padding-right: 22px;
 }
 
 /* Animation Bell */
@@ -234,10 +256,6 @@ body {
   outline: none;
 }
 
-.photo img {
-  cursor: pointer;
-}
-
 img:first-child {
   padding-right: 22px;
 }
@@ -257,13 +275,6 @@ img:last-child {
 .photo p {
   text-align: right;
   font-size: 11px;
-}
-
-main,
-header,
-footer {
-  margin-left: 20em;
-  margin-right: 1rem;
 }
 
 /*Style the div */
@@ -427,9 +438,11 @@ footer {
   }
 }
 
+/* Dashboard Content */
 .dashboard {
   display: flex;
   justify-content: space-between;
+  height: auto;
 }
 
 .left {
@@ -445,7 +458,7 @@ footer {
 
 .righ {
   margin-top: 22px;
-  width: auto;
+  width: 100%;
   height: 1165px;
   background: #f9f9f9;
   border-radius: 8px;
@@ -486,6 +499,8 @@ footer {
   border-radius: 8px;
   box-shadow: 0px 2px 8px 0px rgb(0, 0, 0, 0.14);
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .text-card {
@@ -822,41 +837,22 @@ input[type="range"]::-webkit-slider-thumb {
   margin-right: 24px;
 }
 
-/* RATING STARS */
-.rating p {
-  float: right;
-  margin-right: 12px;
-  margin-top: 13px;
-  font-size: 14px;
-}
-
-/* Margin the text of star */
-#star-text {
-  margin-left: 156px;
-}
-
-#star-text2 {
-  margin-left: 159px;
-}
-
-#star-text3 {
-  margin-left: 164px;
-}
-
 a[href*="intent"] {
   display: inline-block;
   margin-top: 0.4em;
 }
 
-.rating {
-  font-size: 20px;
-  overflow: hidden;
+.group-rating {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 32px;
 }
-.rating input {
-  float: left;
-  opacity: 0;
-  position: absolute;
+
+.group-rating p {
+  margin-top: 13px;
+  margin-right: 13px;
 }
+
 .rating a,
 .rating label {
   font-size: 28px;
@@ -893,11 +889,11 @@ a[href*="intent"] {
   justify-content: center;
 }
 
-button:hover {
+.btn-footer button:hover {
   cursor: pointer;
 }
 
-button {
+.btn-footer button {
   background: transparent;
   outline: none;
   position: relative;
@@ -905,12 +901,12 @@ button {
 }
 
 /*button:before (attr data-hover)*/
-button:hover:before {
+.btn-footer button:hover:before {
   opacity: 1;
   transform: translate(0, 0);
 }
 
-button:before {
+.btn-footer button:before {
   content: attr(data-hover);
   position: absolute;
   top: 1.1em;
@@ -926,12 +922,12 @@ button:before {
 }
 
 /*button div (button text before hover)*/
-button:hover div {
+.btn-footer button:hover div {
   opacity: 0;
   transform: translate(100%, 0);
 }
 
-button div {
+.btn-footer button div {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 800;
@@ -952,8 +948,29 @@ button div {
 }
 
 /* FOOTER */
-#pagination-container {
-  margin-top: 50px;
+footer {
+  padding: 25px 0px;
+  display: flex;
+  height: 50px;
+  margin: 0px;
+  justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* Div to change the background color of the pagination */
+.pagination-color {
+  background: #ededed;
+  width: 220px;
+  height: 45px;
+  position: absolute;
+  margin-left: 10px;
+  z-index: -1;
+  border-radius: 20px;
 }
 
 .simple-pagination ul {
@@ -1017,23 +1034,7 @@ button div {
   font-weight: bold;
 }
 
-.pagination {
-  display: flex;
-  justify-content: center;
-}
-
-/* Div to change the background color of the pagination */
-.pagination-color {
-  background: #ededed;
-  width: 220px;
-  height: 45px;
-  position: absolute;
-  margin-top: 49.3px;
-  margin-left: 10px;
-  z-index: -1;
-  border-radius: 20px;
-}
-
+/* CALENDAR */
 #flatpickr {
   outline: none;
   border: none;
@@ -1058,13 +1059,182 @@ button div {
   font-size: 12px;
 }
 
+@keyframes sidebar {
+  0% {
+    transform: translateX(-300px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/* RESPONSIVENESS */
+
 @media screen and (max-width: 1464px) {
   .left {
-    transition: all 1s linear;
+    transition: all 0.7s linear;
     opacity: 0;
     width: 0;
   }
   .righ {
     margin-left: 0px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  header {
+    margin: 0px 10px;
+  }
+
+  header .header-dashboard .text-dashboard:nth-child(2) {
+    display: none;
+  }
+
+  main {
+    margin: 0px 10px;
+    width: 100%;
+  }
+
+  .side-bar {
+    width: 350px;
+    padding-left: 50px;
+    animation: sidebar 0.7s ease;
+  }
+
+  .showMenu {
+    display: none;
+  }
+
+  .logo {
+    margin-top: 29px;
+    margin-left: 29px;
+  }
+
+  .search {
+    margin-right: 20px;
+  }
+
+  .dashboard {
+    height: 800px;
+    overflow: hidden;
+  }
+
+  .righ {
+    height: auto;
+    overflow: hidden;
+  }
+
+  .col-12.mt-3 {
+    display: block;
+  }
+
+  .group-card {
+    width: 99%;
+  }
+
+  .card-page {
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .card-horizontal {
+    display: block;
+    width: auto;
+  }
+
+  .card {
+    width: 220px;
+    margin-right: 10px;
+    height: auto;
+  }
+
+  .text-card {
+    border: none;
+  }
+
+  .price-card {
+    display: none;
+  }
+
+  .menu-responsive {
+    padding-right: 22px;
+    padding-bottom: 7px;
+  }
+
+  .hamburguer {
+    width: 18px;
+    height: 2px;
+    background: #606060;
+    position: relative;
+    display: block;
+    transition: 0.3s ease-in-out;
+    z-index: 8000;
+  }
+
+  .hamburguer:before,
+  .hamburguer:after {
+    content: "";
+    display: block;
+    background: #606060;
+    width: 18px;
+    height: 2px;
+    transition: 0.3s ease-in-out;
+    position: absolute;
+  }
+
+  .hamburguer:before {
+    top: -5px;
+  }
+
+  .hamburguer:after {
+    bottom: -5px;
+  }
+
+  .icons input {
+    display: none;
+  }
+
+  .icons label {
+    width: 20px;
+    height: 20px;
+    z-index: 5;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 8px;
+  }
+
+  .icons input:checked ~ label .hamburguer {
+    transform: rotate(45deg);
+  }
+
+  .icons input:checked ~ label .hamburguer:before {
+    transform: rotate(90deg);
+    top: 0;
+  }
+
+  .icons input:checked ~ label .hamburguer:after {
+    transform: rotate(90deg);
+    bottom: 0;
+  }
+
+  .icons img:nth-child(1),
+  .icons img:nth-child(2),
+  .icons img:nth-child(3),
+  .icons img:nth-child(4),
+  .icons img:nth-child(5) {
+    display: none;
+  }
+}
+
+/* CELULAR */
+@media screen and (max-width: 946px) {
+  .dashboard {
+    height: auto;
   }
 }
