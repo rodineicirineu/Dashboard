@@ -22,6 +22,10 @@
   </tr>
 </table>
 
+## Link to access the application:
+
+https://dashboard-vercel.vercel.app/
+
 
 ## How to run the application:
 
